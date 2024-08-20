@@ -39,16 +39,5 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
 shape = SubResource("BoxShape3D_jjw70")
 
-[node name="Ground2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.962923)
-collision_layer = 2
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground2"]
-mesh = SubResource("BoxMesh_00c3b")
-skeleton = NodePath("")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground2"]
-shape = SubResource("BoxShape3D_jjw70")
-
 [node name="Player" parent="." instance=ExtResource("1_l6kn1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97078, 6.67459)
