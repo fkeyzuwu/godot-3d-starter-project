@@ -18,10 +18,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 Panku="*res://addons/panku_console/console.tscn"
+Events="*res://addons/dynamic_event_manager/src/event_manager.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/panku_console/plugin.cfg")
+enabled=PackedStringArray("res://addons/DynamicEventManager/addons/dynamic_event_manager/plugin.cfg", "res://addons/dynamic_event_manager/plugin.cfg", "res://addons/panku_console/plugin.cfg")
 
 [input]
 
