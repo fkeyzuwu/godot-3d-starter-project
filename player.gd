@@ -5,7 +5,7 @@ const JUMP_VELOCITY = 3.5
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-var mouse_sensitivity := 3.0
+@export_range(0.1, 5.0, 0.01) var mouse_sensitivity := 1.0
 
 @onready var camera: Camera3D = $Camera3D
 @onready var shoot_raycast: RayCast3D = $Camera3D/ShootRaycast
@@ -14,14 +14,19 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _input(event: InputEvent) -> void:
+	if Panku.get_shell_visibility(): return
+	
 	if event is InputEventMouseMotion:
 		var delta = get_process_delta_time()
 		global_rotation.y -= event.relative.x * delta * mouse_sensitivity
 		camera.global_rotation.x -= event.relative.y * delta * mouse_sensitivity
+		camera.global_rotation_degrees.x = clampf(camera.global_rotation_degrees.x, -85, 85)
 	elif event.is_action_pressed("quit"):
 		get_tree().quit()
 
 func _physics_process(delta: float) -> void:
+	if Panku.get_shell_visibility(): return
+	
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 

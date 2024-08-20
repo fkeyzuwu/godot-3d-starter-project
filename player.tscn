@@ -9,6 +9,7 @@
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 2
 script = ExtResource("1_nw3w6")
+mouse_sensitivity = 1.27
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_ryuan")
