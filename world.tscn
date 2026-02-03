@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://lsv5og7im76d"]
+[gd_scene format=3 uid="uid://lsv5og7im76d"]
 
 [ext_resource type="PackedScene" uid="uid://cy3n0dshugl5p" path="res://player.tscn" id="1_l6kn1"]
 
@@ -20,24 +20,24 @@ size = Vector3(20, 1, 20)
 [sub_resource type="BoxShape3D" id="BoxShape3D_jjw70"]
 size = Vector3(20, 1, 20)
 
-[node name="World" type="Node3D"]
+[node name="World" type="Node3D" unique_id=1185911551]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=537930627]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=891699095]
 environment = SubResource("Environment_qivyf")
 
-[node name="Ground" type="StaticBody3D" parent="."]
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1891926830]
 collision_layer = 2
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=729730936]
 mesh = SubResource("BoxMesh_00c3b")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1256018840]
 shape = SubResource("BoxShape3D_jjw70")
 
-[node name="Player" parent="." instance=ExtResource("1_l6kn1")]
+[node name="Player" parent="." unique_id=849274310 instance=ExtResource("1_l6kn1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97078, 6.67459)
